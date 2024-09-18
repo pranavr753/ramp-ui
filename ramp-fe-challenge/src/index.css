@@ -102,6 +102,12 @@ hr.RampBreak--l {
   box-shadow: rgb(0 0 0 / 10%) 0px 0px 1px, rgb(0 0 0 / 13%) 0px 4px 8px;
 }
 
+.fixed-pos {
+  position: fixed;
+  max-width: 700px;
+  background: var(--color-empty-shade);
+}
+
 .RampInputSelect--dropdown-container-opened {
   display: block;
 }

@@ -2,6 +2,7 @@ import Downshift from "downshift"
 import { useCallback, useState } from "react"
 import classNames from "classnames"
 import { DropdownPosition, GetDropdownPositionFn, InputSelectOnChange, InputSelectProps } from "./types"
+import { handleDropdownClick } from './clickHander';
 
 export function InputSelect<TItem>({
   label,
@@ -80,6 +81,7 @@ export function InputSelect<TItem>({
 
         function renderItems() {
           if (!isOpen) {
+            handleDropdownClick(false, dropdownPosition.top, dropdownPosition.left);
             return null
           }
 
@@ -93,6 +95,7 @@ export function InputSelect<TItem>({
 
           return items.map((item, index) => {
             const parsedItem = parseItem(item)
+            handleDropdownClick(true, dropdownPosition.top, dropdownPosition.left);
             return (
               <div
                 key={parsedItem.value}
